@@ -13,13 +13,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UsersRequestDto {
 
+//    private Long id;
     private String username;
     private String password;
 
     /*
     requestDto -> entity
      */
-//    public Users toEntity() {
-//        return new Users(username, password);
-//    }
+    public Users toEntity() {
+        return Users.builder()
+                .username(this.username)
+                .password(this.password)
+                .build();
+    }
 }
+
